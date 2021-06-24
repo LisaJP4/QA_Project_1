@@ -15,3 +15,9 @@ class Reports(db.Model):
     incident_date = db.Column(db.DateTime)
     complete = db.Column(db.String(1))
     report_type = db.Column(db.String(10), db.ForeignKey('types.type_id'), nullable=False)
+
+damage = Types(type_id="Damage", severity="Medium", role_responsibility="Employee", fixed_in_days=7, policies="In case of damage, either accidental or deliberate, employees should hastily clear the area to ensure customer safety")
+
+db.session.add(damage)
+db.session.commit()
+
