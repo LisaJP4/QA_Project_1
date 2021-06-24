@@ -1,9 +1,11 @@
 from application import db
 from application.models import Types, Reports
+from flask_sqlalchemy import SQLAlchemy
 
-db.drop_all()
-db.create_all()
+db.create_all() 
+db.session.commit()
+
 #adding values to the types table:
-damage = Types(severity="Medium", role_responsibility="Employee", fixed_in_days=7, policies="In case of damage, either accidental or deliberate, employees should hastily clear the area to ensure customer safety")
-db.session.add(damage)
-db.session.commit
+injury = Types(type_id="Injury", severity="High", role_responsibility="Employee", fixed_in_days=1, policies="If an employee or customer is seriously injured, first aid should be administered and, if needed, emergency services should be called")
+db.session.add(injury)
+db.session.commit()

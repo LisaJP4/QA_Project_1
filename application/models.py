@@ -1,4 +1,6 @@
 from application import db
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
 class Types(db.Model):
     type_id = db.Column(db.String(10), primary_key=True)
@@ -16,8 +18,4 @@ class Reports(db.Model):
     complete = db.Column(db.String(1))
     report_type = db.Column(db.String(10), db.ForeignKey('types.type_id'), nullable=False)
 
-damage = Types(type_id="Damage", severity="Medium", role_responsibility="Employee", fixed_in_days=7, policies="In case of damage, either accidental or deliberate, employees should hastily clear the area to ensure customer safety")
-
-db.session.add(damage)
-db.session.commit()
 
