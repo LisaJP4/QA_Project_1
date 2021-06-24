@@ -1,4 +1,4 @@
-from app import db, Types_of_Report, Reports
+from application import db
 
 db.drop_all()
 db.create_all()
