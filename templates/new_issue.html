@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Enter New Issue</title>
+    </head>
+    <body> 
+        <div class='form'>
+            <form method='POST' action=' '>
+                {{ form.hidden_tag() }}
+                {{ form.issue_type.label }} {{ form.new_issue }}
+                {{ form.submit }}
+                {{ message }}
+            </form>
+        </div>
+    </body>
+</html>
