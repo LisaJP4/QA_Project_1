@@ -2,6 +2,17 @@
 <body>
 <title>Employee Portal</title>
 <h1> Welcome to the Employee Portal</h1>
+<h2> Recent Notices: </h2>
+<p> May 2021: We would like to thank all all of our staff who have been a part of the reopening as coronavirus restrictions have lifted.</p>
+<h2> Options: </h2>
+<p> If you would like to review employee policies, please click below:</p>
+<a href={{ url_for('policies') }}>
+    <button>Policies</button>
+</a>
+<p> If you would like to view a list of current reports, both open and resolved, click below:</p>
+<a href={{ url_for('readreports') }}>
+    <button>Reports</button>
+</a>
 {% block body %}
 {% endblock body %}
 </body>

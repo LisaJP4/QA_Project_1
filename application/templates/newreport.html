@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>New Report</title>
+    </head>
+    <h1> Add New Report </h1>
+    <body>
+        <div class='form'>
+            <form method='POST' action=''>
+                {{ form.hidden_tag() }}
+                {{ form.product_section.label }} {{ form.product_section }}
+                <br>
+                {{ form.report_type.label }} {{ form.report_type }}
+                <br>
+                {{ form.description.label }} {{ form.description }}
+                <br>
+                {{ form.resolution.label }} {{ form.resolution }}
+                <br>
+                {{ form.complete.label }} {{ form.complete }}
+                <br>
+                {{ form.submit }}
+            {{ message }}
+            </form>
+        </div>
+    </body>
+</html>
