@@ -29,27 +29,6 @@ def newreport():
         db.session.commit()
     return render_template("newreport.html", form=form)
     
-@app.route('/policies')
-def policies():
-    all_policies = Types.query.all()
-    policies_string = ""
-    for policy in all_policies:
-        policies_string += "<br>"+ "<br>"+ policy.type_id + "   |   "  + policy.policies + "  |  "
-    return render_template('policies.html') + policies_string
-
-#@app.route('/updatereport', methods=['GET', 'POST'])
-#def updatereport():
-#    error = ""
-#    form = New()
-#
-#    if request.method == 'POST':
-#        find_report = Reports.query.filter_by(report_id=form.report_id.data)
-#        for change in find_report:
-#            find_report.resolution = form.resolution.data
-#            find_report.complete = form.complete.data
-#            db.session.commit()
-#    return render_template("updates.html", form=form)
-
 @app.route('/resolve/', methods=['GET', 'POST'])
 def resolve():
     error = ""
@@ -62,3 +41,23 @@ def resolve():
         db.session.commit()
     return render_template("resolve.html", form=form)
     
+@app.route('/delete', methods=['GET', 'POST'])
+def delete():
+    error = ""
+    form = New()
+
+    if request.method == 'POST':
+        find_report = Reports.query.get(form.report_id.data)
+        db.session.delete(find_report)
+        db.session.commit()
+    return render_template("delete.html", form=form)
+
+
+@app.route('/policies')
+def policies():
+    all_policies = Types.query.all()
+    policies_string = ""
+    for policy in all_policies:
+        policies_string += "<br>"+ "<br>"+ policy.type_id + "   |   "  + policy.policies + "  |  "
+    return render_template('policies.html') + policies_string
+
