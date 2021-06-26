@@ -6,7 +6,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField, IntegerField
 from os import getenv
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def welcome():
     return render_template('welcome.html')
 
@@ -53,7 +53,7 @@ def delete():
     return render_template("delete.html", form=form)
 
 
-@app.route('/policies')
+@app.route('/policies', methods=['GET'])
 def policies():
     all_policies = Types.query.all()
     policies_string = ""
