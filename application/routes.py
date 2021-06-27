@@ -36,11 +36,10 @@ def resolve():
     form = New()
 
     if request.method == 'POST':
-        if form.validate_on_submit():
-            find_report = Reports.query.get(form.report_id.data)
-            find_report.resolution = form.resolution.data
-            find_report.complete = form.complete.data
-            db.session.commit()
+        find_report = Reports.query.get(form.report_id.data)
+        find_report.resolution = form.resolution.data
+        find_report.complete = form.complete.data
+        db.session.commit()
     return render_template("resolve.html", form=form, message=error)
      
 @app.route('/delete', methods=['GET', 'POST'])
