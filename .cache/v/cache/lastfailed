@@ -1,0 +1,7 @@
+{
+  "application/tests/unit_test.py": true,
+  "tests/unit_test.py::TestAdd::test_add_post": true,
+  "tests/unit_test.py::TestHome::test_home_get": true,
+  "tests/unit_test.py::TestRead::test_home_get": true,
+  "tests/unit_test.py::TestRead::test_reports_post": true
+}
