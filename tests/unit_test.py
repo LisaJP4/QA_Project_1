@@ -39,6 +39,10 @@ class TestRead(TestApp):
         response = self.client.get(url_for('policies'))
         self.assertEqual(response.status_code, 200)
 
+    def test_delete_get(self):
+        response = self.client.get(url_for('delete'))
+        self.assertEqual(response.status_code, 200)
+
 class TestAss(TestApp):
     def test_add_report(self):
         response = self.client.post(
@@ -54,4 +58,4 @@ class TestAss(TestApp):
 
  
 #class CheckComplete:
- #   def IIinitII(self)
+ #   def __init__(self)

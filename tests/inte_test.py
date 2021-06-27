@@ -3,7 +3,8 @@ from flask_testing import TestCase, LiveServerTestCase
 from application import app, db
 from application.models import Types, Reports
 from application import routes
-
+# from selenium import webdriver
+# from urllib.request import urlopen
 
 class TestApp(LiveServerTestCase):
     def create_app(self):
@@ -27,9 +28,20 @@ class TestApp(LiveServerTestCase):
         db.session.remove()
         db.drop_all()
 
-class TestReports(TestApp):
-    def submit_empty(self):
-        self.driver.find_element_by_xpath(//*[@id="complete"]).send_keys("")
-        self.driver.find_element_by_xpath(//*[@id="submit"]).click()
+# class TestReports(TestApp):
+#    def test_submit_empty(self, case):
+#        self.submit_input('')
+#        self.assertIn(ir_for('newreports'), self.driver.current_url)
 
-    def test_
+#    def test_noreport(self):
+
+
+#        self.driver.find_element_by_xpath(//*[@id="complete"]).send_keys("")
+#        self.driver.find_element_by_xpath(//*[@id="submit"]).click()
+
+#        no_entry = Reports.query.all()
+#        self.assertEqual(len(no_entry), 0)
+
+
+
+

@@ -35,17 +35,14 @@ def resolve():
     error = ""
     form = New()
 
-    if form.validate_on_submit():
-        complete = "Your report has been updated."
-        if request.method == 'POST':
+    if request.method == 'POST':
+        if form.validate_on_submit():
             find_report = Reports.query.get(form.report_id.data)
             find_report.resolution = form.resolution.data
             find_report.complete = form.complete.data
             db.session.commit()
-        return render_template("resolve.html", form=form) + complete
-    else:
-        return render_template("resolve.html", form=form)
-    
+    return render_template("resolve.html", form=form, message=error)
+     
 @app.route('/delete', methods=['GET', 'POST'])
 def delete():
     error = ""
