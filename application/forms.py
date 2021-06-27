@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField, IntegerField
+from wtforms.validators import DataRequired, Length, ValidationError
 
 class New(FlaskForm):
     report_id = IntegerField('Report Number')
@@ -8,6 +9,5 @@ class New(FlaskForm):
     report_type = SelectField('Type', choices=[("Damage"), ("Theft"), ("Injury"), ("Complaint"), ("Training"), ("Illness"), ("Technical")])
     description = StringField('Description')
     resolution = StringField('Resolution')
-    complete = StringField('Complete')
-    submit = SubmitField('Submit Report')
-
+    complete = StringField('Complete', validators=[DataRequired()])
+    submit = SubmitField('Submit')

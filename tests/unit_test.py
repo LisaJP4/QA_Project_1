@@ -53,4 +53,5 @@ class TestAss(TestApp):
         self.assertIn(b'Y', response.data)
 
  
-
+#class CheckComplete:
+ #   def IIinitII(self)

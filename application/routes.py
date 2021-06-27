@@ -4,6 +4,7 @@ from application.models import Types, Reports
 from application.forms import New
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField, IntegerField
+from wtforms.validators import DataRequired, Length, ValidationError
 from os import getenv
 
 @app.route('/', methods=['GET'])
@@ -34,12 +35,16 @@ def resolve():
     error = ""
     form = New()
 
-    if request.method == 'POST':
-        find_report = Reports.query.get(form.report_id.data)
-        find_report.resolution = form.resolution.data
-        find_report.complete = form.complete.data
-        db.session.commit()
-    return render_template("resolve.html", form=form)
+    if form.validate_on_submit():
+        complete = "Your report has been updated."
+        if request.method == 'POST':
+            find_report = Reports.query.get(form.report_id.data)
+            find_report.resolution = form.resolution.data
+            find_report.complete = form.complete.data
+            db.session.commit()
+        return render_template("resolve.html", form=form) + complete
+    else:
+        return render_template("resolve.html", form=form)
     
 @app.route('/delete', methods=['GET', 'POST'])
 def delete():
