@@ -9,3 +9,5 @@ This project is for a garden centre through which employees can log issues that 
 ## Planning
 
 ## 
+
+<img width="433" alt="database_error" src="https://user-images.githubusercontent.com/84873140/123563675-f08cb780-d7ad-11eb-927d-41a693ddad18.png">
