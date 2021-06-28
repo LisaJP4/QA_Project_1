@@ -37,6 +37,13 @@
 <img width="255" alt="delete report page" src="https://user-images.githubusercontent.com/84873140/123565632-7fe99900-d7b5-11eb-9fe0-b03858fd0b77.png">
   
 ## Testing
- 
-  
-  <img width="784" alt="pytest error 2" src="https://user-images.githubusercontent.com/84873140/123565744-c3dc9e00-d7b5-11eb-8971-ad8db337c3c5.png">
+ * I began with Unit Testing for my 'GET' pages and 'POST' requests. These all fortunately passed. Then I tried to implement Integration Testing using Selenium, however, these attempts are now 'hashed out' into comments in my code: 
+  - I added a data validator for one of the fields in the Reports table
+  - I then tried to flag up an error message if the form was not valid
+  - This would mean I could use the element.send_keys and element.click to mimic sending data which wouldn't suit the table
+  - However, unfortunately I was unable to get this to work and there is only 38% coverage currently
+ <img width="784" alt="pytest error 2" src="https://user-images.githubusercontent.com/84873140/123565744-c3dc9e00-d7b5-11eb-8971-ad8db337c3c5.png">
+
+  ## Conclusions
+  * If I was to continue development of this app further or release a further version, I feel that the third table for employees could be easily implemented into the functinality and design. Building upon the 'garden-related' references could also be useful, for example in the drop-down menus for reports. 
+  * A further version could also allow for permissions: for example, only managers would be able to delete reports and could use their employee reference to prove their credentials. 
