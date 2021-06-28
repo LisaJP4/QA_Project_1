@@ -7,6 +7,8 @@ This project is for a garden centre through which employees can log issues that 
 ### How and why did the idea change?
 
 ## Planning
+risk assessment 
+[Risk Assessment.xlsx](https://github.com/LisaJP4/QA_Project_1/files/6722540/Risk.Assessment.xlsx)
 
 ## 
 
