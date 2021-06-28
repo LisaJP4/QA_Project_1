@@ -35,3 +35,8 @@
 <img width="195" alt="logged issues" src="https://user-images.githubusercontent.com/84873140/123565537-28e3c400-d7b5-11eb-8af6-7a77f8e2a326.png">
 * There is also a caution when a user tries to delete a report: 
 <img width="255" alt="delete report page" src="https://user-images.githubusercontent.com/84873140/123565632-7fe99900-d7b5-11eb-9fe0-b03858fd0b77.png">
+  
+## Testing
+ 
+  
+  <img width="784" alt="pytest error 2" src="https://user-images.githubusercontent.com/84873140/123565744-c3dc9e00-d7b5-11eb-8971-ad8db337c3c5.png">
